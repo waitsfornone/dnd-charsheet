@@ -1,15 +1,29 @@
 import React from 'react';
 
-class Row extends React.Component {
+class Group extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props;
   }
 
   render() {
     return (
-      <div className="basic-row" style={this.state.style}>
-        {this.state.value}
+      <div className="data-group" style={this.props.style}>
+        "Group"
+      </div>
+    )
+  }
+}
+
+class Row extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="basic-row">
+        {this.props.value}
+        <Group style={this.props.style}/>
       </div>
     );
   }
@@ -37,10 +51,10 @@ class Sheet extends React.Component {
   render() {
     return (
       <div>
-        <Row value="1" />
-        <Row value="2" style={this.rectangle(100, 50, 1)} />
-        {this.renderRow(3)}
-        {this.renderRow(4)}
+        <Row value="Header" style={this.rectangle(100, 50, 1)}/>
+        <Row value="Armor Magic Money" />
+        <Row value="Throws Attributes" />
+        <Row value="Gear Skills Proficiencies" />
       </div>
     );
   }
