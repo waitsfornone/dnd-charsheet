@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
 }
 
 .profile-image {
@@ -10,10 +9,26 @@
 }
 
 .group {
+    display: flex;
     margin: auto;
+}
+
+.group-col {
+    display: table-row-group;
+    margin: 3px;
+}
+
+#char-info {
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
 }
 
 #character {
     display: table-row-group;
     text-align: center;
+}
+
+#pers-info {
+    margin: auto;
 }
