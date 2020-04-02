@@ -1,3 +1,19 @@
 .basic-row {
-    display: table-cell,
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.profile-image {
+    border-radius: 50%;
+}
+
+.group {
+    margin: auto;
+}
+
+#character {
+    display: table-row-group;
+    text-align: center;
 }

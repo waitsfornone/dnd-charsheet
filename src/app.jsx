@@ -1,44 +1,36 @@
 import React from 'react';
 
-class Group extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="data-group" style={this.props.style}>
-        "Group"
-      </div>
-    )
-  }
+function rectangle(width, height, border) {
+  const styleObj = {
+    width: width,
+    height: height,
+    border: `${border}px solid #000`,
+  };
+  return styleObj;
 }
 
-class Row extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="basic-row">
-        {this.props.value}
-        <Group style={this.props.style}/>
+function HeaderRow() {
+  // this is the top row of data for the sheet
+  return (
+    <div className="basic-row">
+      <div className="group" id="character">
+        <img className="profile-image" src="../pics/my_pic.jpg" alt="gen_face.png" height="100" width="100" />
+        <p id="char-name">Lyque</p>
       </div>
-    );
-  }
+      <div className="group" id="char-info" style={rectangle(200, 100, 1)}>
+        blah
+      </div>
+      <div className="group" id="char-hp">
+        HP/HP
+      </div>
+      <div className="group" id="char-inspiration">
+        Inspiration
+      </div>
+    </div>
+  );
 }
 
 class Sheet extends React.Component {
-  // this should probably just update the props to pass to the object I really want?
-  rectangle(width, height, border) {
-    const styleObj = {
-      width: width,
-      height: height,
-      border: "1px solid #000",
-    };
-    return styleObj;
-  }
 
   renderRow(i) {
     return (
@@ -51,10 +43,10 @@ class Sheet extends React.Component {
   render() {
     return (
       <div>
-        <Row value="Header" style={this.rectangle(100, 50, 1)}/>
-        <Row value="Armor Magic Money" />
+        <HeaderRow />
+        {/* <Row value="Armor Magic Money" />
         <Row value="Throws Attributes" />
-        <Row value="Gear Skills Proficiencies" />
+        <Row value="Gear Skills Proficiencies" /> */}
       </div>
     );
   }
