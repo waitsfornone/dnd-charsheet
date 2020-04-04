@@ -109,8 +109,7 @@ class Sheet extends React.Component {
       <div>
         <HeaderRow />
         <AMMRow />
-        {/* <Row value="Armor Magic Money" />
-        <Row value="Throws Attributes" />
+        {/*<Row value="Throws Attributes" />
         <Row value="Gear Skills Proficiencies" /> */}
       </div>
     );
